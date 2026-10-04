@@ -42,3 +42,22 @@ export const scaleIn: Variants = {
     transition: { duration: 0.9, ease: easeOutExpo },
   },
 }
+
+// Same as riseIn but for scroll-triggered use
+export const riseInView: Variants = {
+  hidden: { opacity: 0, y: 32 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.7, ease: easeOutExpo },
+  },
+}
+
+// Slower fade-in for large blocks of text
+export const fadeInView: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { duration: 0.8, ease: easeOutExpo },
+  },
+}
