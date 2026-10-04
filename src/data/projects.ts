@@ -4,6 +4,7 @@ export type Project = {
   title: string
   client: string
   year: string
+  role: string
   tagline: string
   description: string
   stack: string[]
@@ -20,6 +21,7 @@ export const projects: Project[] = [
     title: "Fashion Business Landing",
     client: "Mom's fashion business",
     year: "2025",
+    role: "Design & frontend",
     tagline: "A refined landing page for a fashion brand.",
     description:
       "A single-page site for a small fashion business — built to look considered, load fast, and convert visitors into inquiries. Focused on typography, image rhythm, and mobile-first layout.",
@@ -35,6 +37,7 @@ export const projects: Project[] = [
     title: "Business Landing Page",
     client: "Coursemate",
     year: "2025",
+    role: "Frontend development",
     tagline: "A clean, conversion-focused landing for a small business.",
     description:
       "A landing page designed around clarity — clear value proposition, clear action, no clutter. Built for someone who needed a professional web presence without the agency price tag.",
@@ -50,6 +53,7 @@ export const projects: Project[] = [
     title: "ShopVerse",
     client: "Personal project",
     year: "2025",
+    role: "Design, frontend & deployment",
     tagline: "A demo e-commerce experience.",
     description:
       "A frontend-focused e-commerce demo exploring product listings, cart state, and modern React patterns. Built as a learning ground for TypeScript and Tailwind.",
