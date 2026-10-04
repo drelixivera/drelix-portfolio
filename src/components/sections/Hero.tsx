@@ -80,14 +80,11 @@ export function Hero() {
             <div className="relative aspect-[4/5] rounded-2xl overflow-hidden border border-border bg-surface">
               {/* Replace with your photo */}
               <div className="absolute inset-0 flex items-center justify-center">
-                <p className="font-mono text-sm text-text-muted">
-                  
-                </p>
               </div>
                 {/* Hero Image */}
               <img
                 src="/src/assets/daniel.jpg"
-                alt="Drelix Ivera"
+                alt="Drelix Ivera — frontend developer"
                 className="w-full h-full object-cover"
               />
 
