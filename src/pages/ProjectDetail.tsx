@@ -88,6 +88,8 @@ export default function ProjectDetail() {
             <img
               src={project.image}
               alt={`${project.title} — full preview`}
+              width={1600}
+              height={1000}
               className="w-full h-auto"
             />
           </div>
