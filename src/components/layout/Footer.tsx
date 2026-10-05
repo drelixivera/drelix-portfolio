@@ -2,9 +2,9 @@ import { Link } from "react-router-dom"
 import { Container } from "../ui/Container"
 
 const socials = [
-  { label: "GitHub", href: "https://github.com/YOUR_USERNAME" },
-  { label: "LinkedIn", href: "https://linkedin.com/in/YOUR_USERNAME" },
-  { label: "Email", href: "mailto:you@example.com" },
+  { label: "GitHub", href: "https://github.com/drelixivera" },
+  { label: "LinkedIn", href: "https://linkedin.com/in/drelixivera" },
+  { label: "Email", href: "https://mail.google.com/" },
 ]
 
 export function Footer() {

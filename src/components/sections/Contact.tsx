@@ -5,12 +5,12 @@ import { Container } from "../ui/Container"
 import { SectionLabel } from "../ui/SectionLabel"
 import { Reveal } from "../ui/Reveal"
 
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID"
-
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/mnjqykgo"
+ 
 const links = [
-  { label: "Email", value: "hello@drelix.dev", href: "mailto:hello@drelix.dev" },
-  { label: "GitHub", value: "@your-username", href: "https://github.com/YOUR_USERNAME" },
-  { label: "LinkedIn", value: "/in/your-username", href: "https://linkedin.com/in/YOUR_USERNAME" },
+  { label: "Email", value: "drelixivera@gmail.com", href: "https://mail.google.com/" },
+  { label: "GitHub", value: "@drelixivera", href: "https://github.com/drelixivera" },
+  { label: "LinkedIn", value: "/in/dreixivera002", href: "https://linkedin.com/in/drelixivera" },
 ]
 
 type Status = "idle" | "submitting" | "success" | "error"
