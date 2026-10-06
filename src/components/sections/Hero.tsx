@@ -85,6 +85,7 @@ export function Hero() {
               <img
                 src="/src/assets/daniel.jpg"
                 alt="Drelix Ivera — frontend developer"
+                loading="eager"
                 className="w-full h-full object-cover"
               />
 
