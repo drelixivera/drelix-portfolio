@@ -4,6 +4,7 @@ import { Container } from "../ui/Container"
 import { SectionLabel } from "../ui/SectionLabel"
 import { useReducedMotion } from "../../hooks/useReducedMotion"
 import { staggerContainer, riseIn, scaleIn } from "../../lib/motion"
+import heroImage from "/daniel.jpg"
 
 export function Hero() {
   const prefersReduced = useReducedMotion()
@@ -83,7 +84,7 @@ export function Hero() {
               </div>
                 {/* Hero Image */}
               <img
-                src="/src/assets/daniel.jpg"
+                src={heroImage}
                 alt="Drelix Ivera — frontend developer"
                 loading="eager"
                 className="w-full h-full object-cover"
