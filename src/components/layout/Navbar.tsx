@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
-import { Menu, X } from "lucide-react"
+import { Menu, X, Sun, Moon } from "lucide-react"
 import { cn } from "../../lib/cn"
 import { Container } from "../ui/Container"
+import { useTheme } from "../../hooks/useTheme"
 
 const navLinks = [
   { label: "Work", href: "#work", index: "01" },
@@ -11,14 +12,15 @@ const navLinks = [
 ]
 
 const socials = [
-  { label: "GitHub", href: "https://github.com/YOUR_USERNAME" },
-  { label: "LinkedIn", href: "https://linkedin.com/in/YOUR_USERNAME" },
+  { label: "GitHub", href: "https://github.com/drelixivera" },
+  { label: "LinkedIn", href: "https://linkedin.com/in/drelixivera" },
   { label: "Email", href: "mailto:you@example.com" },
 ]
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
+  const { theme, toggleTheme } = useTheme()
 
   // Scroll listener for navbar blur
   useEffect(() => {
@@ -57,6 +59,7 @@ export function Navbar() {
       >
         <Container>
           <nav className="flex h-16 md:h-20 items-center justify-between">
+            {/* LEFT: Logo */}
             <Link
               to="/"
               className="font-display text-xl md:text-2xl tracking-tight"
@@ -65,30 +68,46 @@ export function Navbar() {
               Drelix Ivera
             </Link>
 
-            {/* Desktop links */}
-            <ul className="hidden md:flex items-center gap-8">
-              {navLinks.map((link) => (
-                <li key={link.href}>
-                  <a
-                    href={link.href}
-                    className="text-sm text-text-muted hover:text-text transition-colors"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
+            {/* RIGHT: Nav links + buttons, clustered together */}
+            <div className="flex items-center gap-2 md:gap-8">
+              {/* Desktop nav links */}
+              <ul className="hidden md:flex items-center gap-8">
+                {navLinks.map((link) => (
+                  <li key={link.href}>
+                    <a
+                      href={link.href}
+                      className="text-sm text-text-muted hover:text-text transition-colors"
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
 
-            {/* Mobile toggle */}
-            <button
-              type="button"
-              className="md:hidden p-2 -mr-2 relative z-[60]"
-              onClick={() => setMobileOpen((v) => !v)}
-              aria-label={mobileOpen ? "Close menu" : "Open menu"}
-              aria-expanded={mobileOpen}
-            >
-              {mobileOpen ? <X size={20} /> : <Menu size={20} />}
-            </button>
+              {/* Buttons group: theme toggle + mobile hamburger */}
+              <div className="flex items-center gap-1">
+                <button
+                  type="button"
+                  onClick={toggleTheme}
+                  className="p-2 rounded-full hover:bg-surface transition-colors"
+                  aria-label={`Switch to ${
+                    theme === "dark" ? "light" : "dark"
+                  } mode`}
+                >
+                  {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
+                </button>
+
+                <button
+                  type="button"
+                  className="md:hidden p-2 -mr-2 relative z-[60]"
+                  onClick={() => setMobileOpen((v) => !v)}
+                  aria-label={mobileOpen ? "Close menu" : "Open menu"}
+                  aria-expanded={mobileOpen}
+                >
+                  {mobileOpen ? <X size={20} /> : <Menu size={20} />}
+                </button>
+              </div>
+            </div>
           </nav>
         </Container>
       </header>

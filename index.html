@@ -32,6 +32,20 @@
     content="Frontend developer building fast, clean, considered web experiences."
   />
   <meta name="twitter:image" content="https://drelix-ivera-portfolio.vercel.app/og-image.png" />
+  <script>
+  (function () {
+    try {
+      var stored = localStorage.getItem("theme");
+      var theme = stored;
+      if (!theme) {
+        theme = window.matchMedia("(prefers-color-scheme: light)").matches
+          ? "light"
+          : "dark";
+      }
+      document.documentElement.setAttribute("data-theme", theme);
+    } catch (e) {}
+  })();
+</script>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />

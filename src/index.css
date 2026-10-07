@@ -1,26 +1,49 @@
 @import "tailwindcss";
 
 @theme {
-  /* ─── Colors ─────────────────────────────── */
-  --color-bg: #0a0a0b;
-  --color-surface: #141416;
-  --color-border: #26262a;
-
-  --color-text: #f5f5f4;
-  --color-text-muted: #8a8a8f;
-
-  --color-accent: #e8fe5a;
-  --color-accent-hover: #d4ec3f;
-  --color-accent-ink: #0a0a0b;
-
-  /* ─── Fonts ──────────────────────────────── */
   --font-display: "Instrument Serif", ui-serif, Georgia, serif;
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
 
-  /* ─── Motion ─────────────────────────────── */
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
+
+  /* Map semantic colors to CSS variables that change per theme */
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-border: var(--border);
+  --color-text: var(--text);
+  --color-text-muted: var(--text-muted);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-ink: var(--accent-ink);
+}
+
+/* Dark theme (default) */
+:root,
+[data-theme="dark"] {
+  --bg: #0a0a0b;
+  --surface: #141416;
+  --border: #26262a;
+  --text: #f5f5f4;
+  --text-muted: #8a8a8f;
+  --accent: #e8fe5a;
+  --accent-hover: #d4ec3f;
+  --accent-ink: #0a0a0b;
+  color-scheme: dark;
+}
+
+/* Light theme */
+[data-theme="light"] {
+  --bg: #fafaf9;
+  --surface: #ffffff;
+  --border: #e5e5e3;
+  --text: #18181b;
+  --text-muted: #6b6b70;
+  --accent: #a3c400;        /* deeper lime for light bg */
+  --accent-hover: #8fa800;
+  --accent-ink: #0a0a0b;
+  color-scheme: light;
 }
 
 @layer base {
@@ -30,16 +53,17 @@
   }
 
   body {
-    background-color: var(--color-bg);
-    color: var(--color-text);
+    background-color: var(--bg);
+    color: var(--text);
     font-family: var(--font-sans);
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
   ::selection {
-    background-color: var(--color-accent);
-    color: var(--color-accent-ink);
+    background-color: var(--accent);
+    color: var(--accent-ink);
   }
 }
