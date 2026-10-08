@@ -41,7 +41,7 @@ export function Hero() {
               variants={riseIn}
               className="mt-8 text-lg md:text-xl text-text-muted max-w-md leading-relaxed"
             >
-              I build fast, clean, considered web experiences & automations —{" "}
+              I build fast, clean, considered web experiences & automations that solve specific problems —{" "}
               <span className="text-text">always learning, always shipping.</span>
             </motion.p>
 
