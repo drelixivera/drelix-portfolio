@@ -1,5 +1,5 @@
 import { Link, useParams } from "react-router-dom"
-import { ArrowLeft, ArrowUpRight } from "lucide-react"
+import { ArrowLeft } from "lucide-react"
 import ReactMarkdown from "react-markdown"
 import remarkGfm from "remark-gfm"
 import { Container } from "../components/ui/Container"
@@ -32,11 +32,11 @@ export default function NoteDetail() {
         {/* Back link */}
         <Reveal>
           <Link
-            to="/"
+            to="/notes"
             className="inline-flex items-center gap-2 text-sm text-text-muted hover:text-text transition-colors"
           >
             <ArrowLeft size={14} />
-            Back
+            All notes
           </Link>
         </Reveal>
 
@@ -67,7 +67,7 @@ export default function NoteDetail() {
 
         {/* Body */}
         <Reveal delay={0.2} className="mt-16 md:mt-20">
-          <div className="max-w-2xl prose-custom">
+          <div className="max-w-2xl">
             <ReactMarkdown
               remarkPlugins={[remarkGfm]}
               components={{
@@ -103,9 +103,7 @@ export default function NoteDetail() {
                   <em className="italic text-text">{children}</em>
                 ),
                 ul: ({ children }) => (
-                  <ul className="my-6 space-y-3 list-none">
-                    {children}
-                  </ul>
+                  <ul className="my-6 space-y-3 list-none">{children}</ul>
                 ),
                 ol: ({ children }) => (
                   <ol className="my-6 space-y-3 list-decimal list-inside">

@@ -39,18 +39,16 @@ export function Notes() {
             </Reveal>
           ))}
 
-          {/* Bottom border to close the list */}
           <div className="border-t border-border" />
 
-          {/* View all — only if there are more than 3 */}
-          {notes.length > 3 && (
+          {notes.length > 0 && (
             <Reveal>
               <div className="pt-8">
                 <Link
                   to="/notes"
                   className="group inline-flex items-center gap-2 text-sm text-text-muted hover:text-accent transition-colors"
                 >
-                  All {notes.length} notes
+                  All {notes.length} {notes.length === 1 ? "note" : "notes"}
                   <ArrowRight
                     size={14}
                     className="transition-transform group-hover:translate-x-1"
