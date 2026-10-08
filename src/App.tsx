@@ -4,7 +4,8 @@ import Home from "./pages/Home"
 import ProjectDetail from "./pages/ProjectDetail"
 import NotFound from "./pages/NotFound"
 import { Footer } from "./components/layout/Footer"
-
+import { notes } from "./lib/notes"
+console.log("notes loaded:", notes)
 function App() {
   return (
     <BrowserRouter>
