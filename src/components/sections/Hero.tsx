@@ -25,7 +25,7 @@ export function Hero() {
             className="lg:col-span-7 order-2 lg:order-1"
           >
             <motion.div variants={riseIn}>
-              <SectionLabel>frontend developer</SectionLabel>
+              <SectionLabel>frontend developer +  Automation</SectionLabel>
             </motion.div>
 
             <motion.h1
@@ -41,8 +41,8 @@ export function Hero() {
               variants={riseIn}
               className="mt-8 text-lg md:text-xl text-text-muted max-w-md leading-relaxed"
             >
-              I build fast, clean, considered web experiences —{" "}
-              <span className="text-text">still learning, always shipping.</span>
+              I build fast, clean, considered web experiences & automations —{" "}
+              <span className="text-text">always learning, always shipping.</span>
             </motion.p>
 
             <motion.div
