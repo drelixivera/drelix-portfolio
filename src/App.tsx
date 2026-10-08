@@ -1,9 +1,10 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import { Navbar } from "./components/layout/Navbar"
+import { Footer } from "./components/layout/Footer"
 import Home from "./pages/Home"
 import ProjectDetail from "./pages/ProjectDetail"
+import NoteDetail from "./pages/NoteDetail"
 import NotFound from "./pages/NotFound"
-import { Footer } from "./components/layout/Footer"
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/work/:slug" element={<ProjectDetail />} />
+          <Route path="/notes/:slug" element={<NoteDetail />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
