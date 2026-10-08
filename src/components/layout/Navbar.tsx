@@ -87,6 +87,24 @@ export function Navbar() {
               {/* Buttons group: theme toggle + mobile hamburger */}
               <div className="flex items-center gap-1">
                 <button
+                    type="button"
+                    onClick={() => {
+    const event = new KeyboardEvent("keydown", {
+      key: "k",
+      metaKey: true,
+      ctrlKey: true,
+    })
+    window.dispatchEvent(event)
+  }}
+  className="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-full border border-border text-xs font-mono text-text-muted hover:text-text hover:border-text transition-colors"
+  aria-label="Open command palette"
+>
+  <span>Search</span>
+  <kbd className="text-[10px] border border-border rounded px-1.5 py-0.5">
+    ⌘K
+  </kbd>
+</button>
+                <button
                   type="button"
                   onClick={toggleTheme}
                   className="p-2 rounded-full hover:bg-surface transition-colors"

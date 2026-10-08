@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import { Navbar } from "./components/layout/Navbar"
 import { Footer } from "./components/layout/Footer"
+import { CommandPaletteMount } from "./components/layout/CommandPaletteMount"
 import Home from "./pages/Home"
 import ProjectDetail from "./pages/ProjectDetail"
 import NotesIndex from "./pages/NotesIndex"
@@ -21,6 +22,7 @@ function App() {
         </Routes>
       </main>
       <Footer />
+      <CommandPaletteMount />
     </BrowserRouter>
   )
 }
