@@ -1,9 +1,16 @@
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
 import { useLocation } from "react-router-dom"
 import { CommandPalette } from "../ui/CommandPalette"
 
-export function CommandPaletteMount() {
-  const [open, setOpen] = useState(false)
+type CommandPaletteMountProps = {
+  open: boolean
+  onOpenChange: (open: boolean) => void
+}
+
+export function CommandPaletteMount({
+  open,
+  onOpenChange,
+}: CommandPaletteMountProps) {
   const location = useLocation()
 
   // Global keyboard shortcut
@@ -11,17 +18,18 @@ export function CommandPaletteMount() {
     function handleKey(e: KeyboardEvent) {
       if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
         e.preventDefault()
-        setOpen((v) => !v)
+        onOpenChange(!open)
       }
     }
     window.addEventListener("keydown", handleKey)
     return () => window.removeEventListener("keydown", handleKey)
-  }, [])
+  }, [open, onOpenChange])
 
   // Close on route change
   useEffect(() => {
-    setOpen(false)
+    onOpenChange(false)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location.pathname])
 
-  return <CommandPalette open={open} onOpenChange={setOpen} />
+  return <CommandPalette open={open} onOpenChange={onOpenChange} />
 }

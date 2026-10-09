@@ -1,7 +1,9 @@
+import { useState } from "react"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import { Navbar } from "./components/layout/Navbar"
 import { Footer } from "./components/layout/Footer"
 import { CommandPaletteMount } from "./components/layout/CommandPaletteMount"
+import { WhatsAppButton } from "./components/ui/WhatsAppButton"
 import Home from "./pages/Home"
 import ProjectDetail from "./pages/ProjectDetail"
 import NotesIndex from "./pages/NotesIndex"
@@ -9,6 +11,8 @@ import NoteDetail from "./pages/NoteDetail"
 import NotFound from "./pages/NotFound"
 
 function App() {
+  const [paletteOpen, setPaletteOpen] = useState(false)
+
   return (
     <BrowserRouter>
       <Navbar />
@@ -22,7 +26,12 @@ function App() {
         </Routes>
       </main>
       <Footer />
-      <CommandPaletteMount />
+
+      <CommandPaletteMount
+        open={paletteOpen}
+        onOpenChange={setPaletteOpen}
+      />
+      <WhatsAppButton hidden={paletteOpen} />
     </BrowserRouter>
   )
 }
