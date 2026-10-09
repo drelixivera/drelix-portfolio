@@ -3,8 +3,8 @@ import { Container } from "../ui/Container"
 
 const socials = [
   { label: "GitHub", href: "https://github.com/drelixivera" },
-  { label: "LinkedIn", href: "https://linkedin.com/in/drelixivera" },
-  { label: "Email", href: "https://mail.google.com/" },
+  { label: "X", href: "https://x.com/he_is_him_01" },
+  { label: "Email", href: "mailto:drelixivera@gmail.com" },
 ]
 
 export function Footer() {

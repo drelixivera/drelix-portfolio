@@ -6,11 +6,23 @@ import { SectionLabel } from "../ui/SectionLabel"
 import { Reveal } from "../ui/Reveal"
 
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/mnjqykgo"
- 
+
 const links = [
-  { label: "Email", value: "drelixivera@gmail.com", href: "https://mail.google.com/" },
-  { label: "GitHub", value: "@drelixivera", href: "https://github.com/drelixivera" },
-  { label: "LinkedIn", value: "/in/dreixivera002", href: "https://linkedin.com/in/drelixivera" },
+  {
+    label: "Email",
+    value: "drelixivera@gmail.com",
+    href: "mailto:drelixivera@gmail.com",
+  },
+  {
+    label: "X",
+    value: "Drelix Ivera",
+    href: "https://x.com/he_is_him_01",
+  },
+  {
+    label: "GitHub",
+    value: "@drelixivera",
+    href: "https://github.com/drelixivera",
+  },
 ]
 
 type Status = "idle" | "submitting" | "success" | "error"
@@ -63,7 +75,10 @@ export function Contact() {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="name" className="block font-mono text-xs uppercase tracking-widest text-text-muted mb-2">
+                  <label
+                    htmlFor="name"
+                    className="block font-mono text-xs uppercase tracking-widest text-text-muted mb-2"
+                  >
                     Name
                   </label>
                   <input
@@ -75,7 +90,10 @@ export function Contact() {
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block font-mono text-xs uppercase tracking-widest text-text-muted mb-2">
+                  <label
+                    htmlFor="email"
+                    className="block font-mono text-xs uppercase tracking-widest text-text-muted mb-2"
+                  >
                     Email
                   </label>
                   <input
@@ -89,7 +107,10 @@ export function Contact() {
               </div>
 
               <div>
-                <label htmlFor="message" className="block font-mono text-xs uppercase tracking-widest text-text-muted mb-2">
+                <label
+                  htmlFor="message"
+                  className="block font-mono text-xs uppercase tracking-widest text-text-muted mb-2"
+                >
                   Message
                 </label>
                 <textarea
@@ -125,10 +146,14 @@ export function Contact() {
                 </button>
 
                 {status === "success" && (
-                  <p className="text-sm text-accent">Thanks — I'll reply soon.</p>
+                  <p className="text-sm text-accent">
+                    Thanks — I'll reply soon.
+                  </p>
                 )}
                 {status === "error" && (
-                  <p className="text-sm text-red-400">Something went wrong. Try email instead.</p>
+                  <p className="text-sm text-red-400">
+                    Something went wrong. Try email instead.
+                  </p>
                 )}
               </div>
             </form>
@@ -142,7 +167,11 @@ export function Contact() {
                   <a
                     href={link.href}
                     target={link.href.startsWith("http") ? "_blank" : undefined}
-                    rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                    rel={
+                      link.href.startsWith("http")
+                        ? "noopener noreferrer"
+                        : undefined
+                    }
                     className="group flex items-baseline justify-between gap-4 border-b border-border pb-4 hover:border-accent transition-colors"
                   >
                     <div>
