@@ -25,7 +25,7 @@ export function Hero() {
             className="lg:col-span-7 order-2 lg:order-1"
           >
             <motion.div variants={riseIn}>
-              <SectionLabel>frontend developer +  Automation</SectionLabel>
+              <SectionLabel>Frontend Developer & Workflow Automation Specialist</SectionLabel>
             </motion.div>
 
             <motion.h1

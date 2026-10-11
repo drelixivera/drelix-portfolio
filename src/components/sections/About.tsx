@@ -2,7 +2,7 @@ import { Container } from "../ui/Container"
 import { SectionLabel } from "../ui/SectionLabel"
 import { Reveal } from "../ui/Reveal"
 
-const learning = ["TypeScript", "Motion design", "Accessibility", "System design"]
+const learning = ["TypeScript", "Technical Writing", "System design"]
 
 export function About() {
   return (
@@ -31,21 +31,13 @@ export function About() {
             <div className="space-y-6 text-base md:text-lg text-text-muted leading-relaxed">
               <p>
                 I'm <span className="text-text">Drelix Ivera</span> — a
-                frontend developer based in Nigeria. I got into this because I
-                wanted to make things people actually use, and I stayed because
-                there's always one more detail worth getting right.
+                Frontend Developer and Automation Engineer who specializes in turning slow, manual processes into fast, user-friendly web products.
               </p>
               <p>
-                I care about the boring stuff that makes a site feel good:
-                spacing, timing, load speed, keyboard navigation. The kind of
-                things you only notice when they're wrong. My work tends toward
-                minimal and typographic — clean structure, one strong accent,
-                nothing wasted.
+                I use industry standard stacks to engineer standalone tools, browser extensions and web apps that solve real-world problems.
               </p>
               <p>
-                I'm early in my career and I'm upfront about it. What I lack in
-                years, I make up for in shipping — real projects, real clients,
-                real feedback loops.
+               Whether it's mapping out data-heavy Chemical Engineering workflows or building daily productivity tools, I focus on shipping software that saves time.
               </p>
             </div>
 
