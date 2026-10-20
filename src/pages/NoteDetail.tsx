@@ -8,7 +8,9 @@ import { getNoteBySlug, getAdjacentNotes } from "../lib/notes"
 import NotFound from "./NotFound"
 
 function formatDate(iso: string): string {
+  if (!iso) return ""
   const date = new Date(iso)
+  if (isNaN(date.getTime())) return ""
   return date.toLocaleDateString("en-GB", {
     day: "2-digit",
     month: "long",

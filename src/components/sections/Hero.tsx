@@ -25,7 +25,7 @@ export function Hero() {
             className="lg:col-span-7 order-2 lg:order-1"
           >
             <motion.div variants={riseIn}>
-              <SectionLabel>Frontend Developer & Workflow Automation Specialist</SectionLabel>
+              <SectionLabel>Fullstack-AI Engineer & Workflow Automation Specialist</SectionLabel>
             </motion.div>
 
             <motion.h1
@@ -41,8 +41,8 @@ export function Hero() {
               variants={riseIn}
               className="mt-8 text-lg md:text-xl text-text-muted max-w-md leading-relaxed"
             >
-              I build fast, clean, considered web experiences & automations that solve specific problems —{" "}
-              <span className="text-text">always learning, always shipping.</span>
+              I build intelligent web applications, AI workflows & automations that solve real-world problems —{" "}
+              <span className="text-text">bridging thoughtful frontend design with scalable LLM architectures.</span>
             </motion.p>
 
             <motion.div
@@ -85,7 +85,7 @@ export function Hero() {
                 {/* Hero Image */}
               <img
                 src={heroImage}
-                alt="Drelix Ivera — frontend developer"
+                alt="Drelix Ivera — Fullstack-AI Engineer"
                 loading="eager"
                 className="w-full h-full object-cover"
               />

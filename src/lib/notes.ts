@@ -40,6 +40,7 @@ function parseNote(path: string, raw: string): Note {
 
 export const notes: Note[] = Object.entries(noteFiles)
   .map(([path, raw]) => parseNote(path, raw))
+  .filter((note) => note.title !== "Untitled" && note.date.trim() !== "")
   .sort((a, b) => (a.date < b.date ? 1 : -1)) // newest first
 
 export function getNoteBySlug(slug: string): Note | undefined {

@@ -19,7 +19,7 @@ export function Footer() {
             <span className="text-accent">//</span> say hi
           </p>
           <p className="font-display text-3xl md:text-5xl leading-tight max-w-3xl">
-            Currently open to freelance work and interesting collaborations.
+            Currently open to Fullstack-AI engineering roles, freelance builds, and ambitious collaborations.
           </p>
         </div>
 
@@ -44,13 +44,13 @@ export function Footer() {
             <Link to="/" className="hover:text-text transition-colors">
               Home
             </Link>
-            <a href="#work" className="hover:text-text transition-colors">
+            <a href="/#work" className="hover:text-text transition-colors">
               Work
             </a>
-            <a href="#about" className="hover:text-text transition-colors">
+            <a href="/#about" className="hover:text-text transition-colors">
               About
             </a>
-            <a href="#contact" className="hover:text-text transition-colors">
+            <a href="/#contact" className="hover:text-text transition-colors">
               Contact
             </a>
           </div>

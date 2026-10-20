@@ -6,9 +6,9 @@ import { Container } from "../ui/Container"
 import { useTheme } from "../../hooks/useTheme"
 
 const navLinks = [
-  { label: "Work", href: "#work", index: "01" },
-  { label: "About", href: "#about", index: "02" },
-  { label: "Contact", href: "#contact", index: "03" },
+  { label: "Work", href: "/#work", index: "01" },
+  { label: "About", href: "/#about", index: "02" },
+  { label: "Contact", href: "/#contact", index: "03" },
 ]
 
 const socials = [
@@ -17,7 +17,11 @@ const socials = [
   { label: "Email", href: "mailto:drelixivera@gmail.com" },
 ]
 
-export function Navbar() {
+type NavbarProps = {
+  onOpenPalette?: () => void
+}
+
+export function Navbar({ onOpenPalette }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
   const { theme, toggleTheme } = useTheme()
@@ -46,6 +50,20 @@ export function Navbar() {
     window.addEventListener("keydown", handleKey)
     return () => window.removeEventListener("keydown", handleKey)
   }, [])
+
+  function handlePaletteClick() {
+    if (onOpenPalette) {
+      onOpenPalette()
+    } else {
+      window.dispatchEvent(
+        new KeyboardEvent("keydown", {
+          key: "k",
+          metaKey: true,
+          ctrlKey: true,
+        })
+      )
+    }
+  }
 
   return (
     <>
@@ -88,14 +106,7 @@ export function Navbar() {
               <div className="flex items-center gap-1">
                 <button
                   type="button"
-                  onClick={() => {
-                    const event = new KeyboardEvent("keydown", {
-                      key: "k",
-                      metaKey: true,
-                      ctrlKey: true,
-                    })
-                    window.dispatchEvent(event)
-                  }}
+                  onClick={handlePaletteClick}
                   className="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-full border border-border text-xs font-mono text-text-muted hover:text-text hover:border-text transition-colors"
                   aria-label="Open command palette"
                 >

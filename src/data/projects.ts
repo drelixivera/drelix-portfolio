@@ -19,7 +19,7 @@ export const projects: Project[] = [
     slug: "fashion-landing",
     index: "01",
     title: "Fashion Business Landing",
-    client: "Adeola Fashion Desinger",
+    client: "Adeola Fashion Designer",
     year: "2025",
     role: "Design & frontend",
     tagline: "A refined landing page for a fashion brand.",

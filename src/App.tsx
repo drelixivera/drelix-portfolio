@@ -15,7 +15,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Navbar />
+      <Navbar onOpenPalette={() => setPaletteOpen(true)} />
       <main className="pt-16 md:pt-20">
         <Routes>
           <Route path="/" element={<Home />} />

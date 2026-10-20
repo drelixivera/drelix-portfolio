@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { Command } from "cmdk"
 import {
@@ -21,13 +21,14 @@ export function CommandPalette({ open, onOpenChange }: CommandPaletteProps) {
   const navigate = useNavigate()
   const [search, setSearch] = useState("")
 
-  // Reset search when reopening
-  useEffect(() => {
-    if (open) setSearch("")
-  }, [open])
+
+
+
+
 
   function runCommand(action: () => void) {
     action()
+    setSearch("")
     onOpenChange(false)
   }
 
@@ -41,7 +42,10 @@ export function CommandPalette({ open, onOpenChange }: CommandPaletteProps) {
     >
       {/* Backdrop — clicking it closes the palette */}
       <div
-        onClick={() => onOpenChange(false)}
+        onClick={() => {
+          setSearch("")
+          onOpenChange(false)
+        }}
         aria-hidden="true"
         className="fixed inset-0 bg-black/70 backdrop-blur-sm"
       />
